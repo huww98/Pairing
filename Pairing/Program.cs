@@ -40,7 +40,11 @@ namespace Pairing
         static void Main(string[] args)
         {
             Console.Write("seed: ");
-            int seed = int.Parse(Console.ReadLine());
+            int seed;
+            unchecked
+            { 
+                seed = (int)long.Parse(Console.ReadLine());
+            }
             Random random = new Random(seed);
 
             Console.WriteLine("Input data: [groud ID] [subject ID] ...");
